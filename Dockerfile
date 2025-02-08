@@ -4,16 +4,17 @@ USER root
 
 # Install build dependencies
 RUN install_packages \
-    postgresql-server-dev-17 \
     libcurl4-openssl-dev \
     make \
     gcc \
-    git
-
+    git \
+    build-essential
+    
 # Build and install pgsql-http
 RUN cd /tmp && \
     git clone https://github.com/pramsey/pgsql-http.git && \
     cd pgsql-http && \
+    export PG_CONFIG=/opt/bitnami/postgresql/bin/pg_config && \
     make && \
     make install && \
     # Clean up build dependencies
