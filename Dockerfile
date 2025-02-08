@@ -20,10 +20,10 @@ RUN cd /tmp && \
     # Clean up build dependencies
     rm -rf /tmp/pgsql-http && \
     apt-get remove -y \
-        postgresql-server-dev-17 \
         make \
         gcc \
-        git && \
+        git \
+        build-essential && \
     apt-get autoremove -y && \
     apt-get clean && \
     rm -rf /var/lib/apt/lists/*
