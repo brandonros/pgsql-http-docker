@@ -29,6 +29,6 @@ RUN cd /tmp && \
     rm -rf /var/lib/apt/lists/*
 
 # Fix permissions for the extension
-RUN chmod g+rwX /usr/lib/postgresql/17/lib/http.so /usr/share/postgresql/17/extension/http*
+RUN chmod g+rwX /opt/bitnami/postgresql/lib/http.so /opt/bitnami/postgresql/share/extension/http*
 
 USER 1001
