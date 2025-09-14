@@ -6,6 +6,11 @@ USER root
 RUN install_packages \
     libcurl4-openssl-dev \
     libssl-dev \
+    liblz4-dev \
+    libxslt1-dev \
+    libxml2-dev \
+    zlib1g-dev \
+    libedit-dev \
     curl \
     unzip \
     make \
