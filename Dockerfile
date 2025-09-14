@@ -19,15 +19,7 @@ RUN cd /tmp && \
     export PG_CONFIG=/opt/bitnami/postgresql/bin/pg_config && \
     make && \
     make install && \
-    # Clean up build dependencies
-    rm -rf /tmp/pgsql-http* && \
-    apt-get remove -y \
-        make \
-        gcc \
-        build-essential && \
-    apt-get autoremove -y && \
-    apt-get clean && \
-    rm -rf /var/lib/apt/lists/*
+    rm -rf /tmp/pgsql-http*
 
 # Build and install pglogical
 RUN cd /tmp && \
@@ -37,12 +29,12 @@ RUN cd /tmp && \
     export PG_CONFIG=/opt/bitnami/postgresql/bin/pg_config && \
     make && \
     make install && \
-    # Clean up build dependencies
-    rm -rf /tmp/pgsql-http && \
-    apt-get remove -y \
+    rm -rf /tmp/pglogical*
+
+# Clean up build dependencies
+RUN apt-get remove -y \
         make \
         gcc \
-        git \
         build-essential && \
     apt-get autoremove -y && \
     apt-get clean && \
