@@ -5,6 +5,7 @@ USER root
 # Install build dependencies
 RUN install_packages \
     libcurl4-openssl-dev \
+    libssl-dev \
     curl \
     unzip \
     make \
