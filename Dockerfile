@@ -21,7 +21,7 @@ RUN install_packages \
 RUN cd /tmp && \
     curl -L -o pgsql-http.zip https://github.com/pramsey/pgsql-http/archive/refs/tags/v1.7.0.zip && \
     unzip pgsql-http.zip && \
-    cd pgsql-http-1.7.0 && \
+    cd pgsql-http-* && \
     export PG_CONFIG=/opt/bitnami/postgresql/bin/pg_config && \
     make && \
     make install && \
@@ -41,6 +41,8 @@ RUN cd /tmp && \
 RUN apt-get remove -y \
         make \
         gcc \
+        curl \
+        unzip \
         build-essential && \
     apt-get autoremove -y && \
     apt-get clean && \
