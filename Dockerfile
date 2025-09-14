@@ -48,7 +48,8 @@ RUN apt-get remove -y \
     apt-get clean && \
     rm -rf /var/lib/apt/lists/*
 
-# Fix permissions for the extension
-RUN chmod g+rwX /opt/bitnami/postgresql/lib/http.so /opt/bitnami/postgresql/share/extension/http*
+# Fix permissions for the extensions
+RUN chmod g+rwX /opt/bitnami/postgresql/lib/http.so /opt/bitnami/postgresql/share/extension/http* && \
+    chmod g+rwX /opt/bitnami/postgresql/lib/pglogical.so /opt/bitnami/postgresql/share/extension/pglogical*
 
 USER 1001
