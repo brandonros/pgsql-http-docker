@@ -52,4 +52,4 @@ RUN apt-get remove -y \
 RUN chmod g+rwX /opt/bitnami/postgresql/lib/http.so /opt/bitnami/postgresql/share/extension/http* && \
     chmod g+rwX /opt/bitnami/postgresql/lib/pglogical.so /opt/bitnami/postgresql/share/extension/pglogical*
 
-USER 1001
+USER postgres
